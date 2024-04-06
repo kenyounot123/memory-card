@@ -1,6 +1,10 @@
 import "../stylesheets/GameCard.css";
 
-function GameCard({ dogImage = null }) {
-  return <div className="card"></div>;
+function GameCard({ dogImage }) {
+  return (
+    <div className="card">
+      <img src={dogImage} alt="cute dog" />
+    </div>
+  );
 }
 export { GameCard };

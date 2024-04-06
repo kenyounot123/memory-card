@@ -3,9 +3,5 @@
   width: 330px;
   height: 330px;
   border-radius: 16px;
-}
-.card-container {
-  text-align: center;
-  width: 90%;
-  margin: 50px auto 0;
+  margin-top: 50px;
 }

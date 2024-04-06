@@ -58,9 +58,9 @@ a:not([class]) {
 /* end reset */
 
 :root {
-  --main-color: #a9baf5;
-  --highlight-color: #f5d376;
-  --text-color: hsl(227, 79%, 15%);
+  --main-color: #97ddf4;
+  --highlight-color: #f5b576;
+  --text-color: #2b3f46;
 }
 body {
   font-family: "Poppins", sans-serif;
