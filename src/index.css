@@ -58,13 +58,18 @@ a:not([class]) {
 /* end reset */
 
 :root {
-  --main-color: #011df5;
-  --highlight-color: #f5bd00;
+  --main-color: #a9baf5;
+  --highlight-color: #f5d376;
+  --text-color: hsl(227, 79%, 15%);
 }
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
   background-color: var(--main-color);
-  color: white;
+  color: var(--text-color);
+}
+.container {
+  margin: 0 auto;
+  width: 90%;
 }

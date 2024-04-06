@@ -1,6 +1,8 @@
 .header-title {
-  font-size: 2rem;
+  padding: 0;
+  font-size: 4rem;
+  color: var(--text-color);
 }
 .highlight {
-  color: #f5bd00;
+  color: var(--highlight-color);
 }
