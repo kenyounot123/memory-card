@@ -17,12 +17,10 @@ function App() {
       <GameInfo />
       <Score current="0" best="45" />
       <div className="container">
-        <GameCard dogData={dogData[0]} />
-        <GameCard />
-        <GameCard />
-        <GameCard />
-        <GameCard />
-        <GameCard />
+        {dogData.map((image) => (
+          //Key is the number at the end of the url (it is unique for each image)
+          <GameCard key={image.match(/\d+/g)} dogImage={image} />
+        ))}
       </div>
     </>
   );
