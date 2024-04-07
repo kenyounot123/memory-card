@@ -1,3 +1,9 @@
 .game-info {
   font-size: 1.3rem;
 }
+
+@media (min-width: 700px) {
+  .game-info {
+    text-align: center;
+  }
+}

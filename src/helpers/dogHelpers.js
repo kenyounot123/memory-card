@@ -7,6 +7,7 @@ function createDog(id, img) {
   return {
     id: id,
     img: img,
+    clicked: false,
   };
 }
 async function fetchDogData(numberOfDogs, setDogData) {

@@ -12,7 +12,7 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
-  const numOfDogs = 6;
+  const numOfDogs = 9;
 
   // Sync App component with fetching data side effect
   useEffect(() => {
@@ -20,24 +20,32 @@ function App() {
   }, []);
 
   // Function that is passed when a card is clicked
-  function handleClick() {
-    shuffleCards(dogData, setDogData, numOfDogs);
-    console.log(dogData);
-    // Game logic:
-    // On game render, initialize states and data
-    // -> user clicks on card
-    // +1 to score if prev cards clicked !== current card clicked then shuffle around the cards
-    // else game ends and update best score
+  function handleClick(dog, index) {
+    console.log(dog);
+    if (dog.clicked) {
+      setBestScore(currentScore);
+      setCurrentScore(0);
+      //Render lose page
+    }
+    setCurrentScore((prevScore) => prevScore + 1);
+    const updatedDogData = [...dogData];
+    updatedDogData[index].clicked = true;
+    setDogData(updatedDogData);
+    shuffleCards(updatedDogData, setDogData);
   }
   return (
     <>
       <Header />
       <GameInfo />
       <Score current={currentScore} best={bestScore} />
-      <div className="container">
-        {dogData.map((dog) => (
+      <div className="card-container">
+        {dogData.map((dog, index) => (
           //Key is the string and number at the end of the url (it is unique for each image)
-          <GameCard key={dog.id} dogImage={dog.img} cardClick={handleClick} />
+          <GameCard
+            key={dog.id}
+            dogImage={dog.img}
+            cardClick={() => handleClick(dog, index)}
+          />
         ))}
       </div>
     </>

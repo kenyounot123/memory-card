@@ -7,3 +7,8 @@
   color: var(--highlight-color);
   font-size: 4.5rem;
 }
+@media (min-width: 700px) {
+  .header-title {
+    text-align: center;
+  }
+}
