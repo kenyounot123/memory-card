@@ -1,3 +1,6 @@
+function getCurrentScore(dogData) {
+  return dogData.filter((dog) => dog.clicked === true).length;
+}
 function shuffleCards(dogData, setDogData) {
   const shuffledArray = [...dogData];
 
@@ -13,4 +16,5 @@ function shuffleCards(dogData, setDogData) {
 
   setDogData(shuffledArray);
 }
-export { shuffleCards };
+
+export { shuffleCards, getCurrentScore };

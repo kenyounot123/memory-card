@@ -1,0 +1,25 @@
+.result-container {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 5rem;
+  width: 90%;
+}
+.emphasize {
+  color: var(--highlight-color);
+  font-size: 5.5rem;
+}
+.play-again-btn {
+  font-size: 2rem;
+  padding: 0.5em 1em;
+  border-radius: 16px;
+  border: none;
+  color: hsl(28 92% 15% / 1);
+  background-color: var(--highlight-color);
+  transition: transform 0.3s ease;
+}
+.play-again-btn:hover {
+  transform: scale(1.1);
+}
+.play-again-btn:active {
+  transform: translateY(10px);
+}
