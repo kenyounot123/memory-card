@@ -27,19 +27,21 @@ function App() {
   }
 
   function handleClick(dog, index) {
+    const unclickedDogs = dogData.filter((dog) => dog.clicked === false);
     if (dog.clicked) {
       setBestScore(getCurrentScore(dogData));
-      getCurrentScore(dogData) === numOfDogs
-        ? setGameFinished({
-            ...gameFinished,
-            gameOver: true,
-            gameStatus: "win",
-          })
-        : setGameFinished({
-            ...gameFinished,
-            gameOver: true,
-            gameStatus: "lose",
-          });
+      setGameFinished({
+        ...gameFinished,
+        gameOver: true,
+        gameStatus: "lose",
+      });
+    } else if (unclickedDogs.length === 1) {
+      setBestScore(getCurrentScore(dogData) + 1);
+      setGameFinished({
+        ...gameFinished,
+        gameOver: true,
+        gameStatus: "win",
+      });
     } else {
       const updatedDogData = [...dogData];
       updatedDogData[index].clicked = true;
